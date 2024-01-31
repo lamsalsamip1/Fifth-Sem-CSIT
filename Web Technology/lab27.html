@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Window Variables and Event</title>
+  </head>
+  <body>
+    <script>
+      window.myVariable = "Hello, world!";
+
+      document.write(window.myVariable);
+
+      window.addEventListener("resize", function () {
+        document.write("Window was resized!");
+      });
+    </script>
+  </body>
+</html>

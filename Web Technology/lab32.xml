@@ -1,0 +1,14 @@
+<!DOCTYPE note [ <!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+<note>
+  <to>Samip</to>
+  <from>John</from>
+  <heading>Reminder</heading>
+  <body>
+    The event is Saturday !
+  </body>
+</note>

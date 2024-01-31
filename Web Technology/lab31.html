@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery Usage Samip</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <button id="myButton">Click me</button>
+    <p id="myParagraph">Hello, world!</p>
+
+    <script>
+      $(document).ready(function () {
+        $("#myButton").click(function () {
+          $("#myParagraph").text("Hello, jQuery!");
+        });
+      });
+    </script>
+  </body>
+</html>

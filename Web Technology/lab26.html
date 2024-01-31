@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Radio Button</title>
+  </head>
+  <body>
+    <form id="radioForm">
+      <input type="radio" id="option1" name="option" value="Option 1" />
+      <label for="option1">Option 1</label><br />
+      <input type="radio" id="option2" name="option" value="Option 2" />
+      <label for="option2">Option 2</label><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+      let form = document.getElementById("radioForm");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let selectedOption = document.querySelector(
+          'input[name="option"]:checked'
+        ).value;
+        alert("The option selected was " + selectedOption);
+      });
+    </script>
+  </body>
+</html>

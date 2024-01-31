@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Error Handling SAmip</title>
+  </head>
+  <body>
+    <script>
+      function riskyFunction() {
+        throw new Error("An error occurred!");
+      }
+
+      try {
+        riskyFunction();
+      } catch (error) {
+        console.log("Caught an error: " + error.message);
+      } finally {
+        console.log("This always runs, whether an error occurred or not.");
+      }
+    </script>
+  </body>
+</html>

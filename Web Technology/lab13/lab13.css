@@ -1,0 +1,12 @@
+  /* Add shadow to text */
+  h1 {
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  /* Add shadow to boxes */
+  .box {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(210, 206, 206);
+    box-shadow: 10px 10px 5px #000000;
+  }

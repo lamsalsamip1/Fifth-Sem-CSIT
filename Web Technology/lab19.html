@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Accessing and Manipulating DOM</title>
+  </head>
+  <body>
+    <h1 id="myHeading">Hi , I'm Samip</h1>
+    <button onclick="changeText()">Click me</button>
+
+    <script>
+      function changeText() {
+        var heading = document.getElementById("myHeading");
+        heading.textContent = "Hello JavaScript!";
+      }
+    </script>
+  </body>
+</html>

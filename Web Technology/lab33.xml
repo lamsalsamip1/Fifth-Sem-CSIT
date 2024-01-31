@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<note xmlns="http://www.w3schools.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.w3schools.com lab33.xsd">
+  <to>Samip</to>
+  <from>Ram</from>
+  <heading>Reminder</heading>
+  <body>Hult Prize event is Friday !</body>
+</note>

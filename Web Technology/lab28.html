@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title> Form Validation </title>
+   
+  </head>
+  <body>
+    <form onsubmit="return validateForm(this)">
+      <label for="username">Username : </label>
+      <input type="text" name="username" id="username" />
+
+      <label for="password">Password : </label>
+      <input type="password" name="password" id="password" />
+
+      <p>What is your education portfolio?</p>
+
+      <label for="school">High School</label>
+      <input type="checkbox" name="school" id="school" />
+    <br>
+      <label for="bachelor">Bachelors</label>
+      <input type="checkbox" name="bachelor" id="bachelor" />
+    <br>
+      <label for=masters">Masters</label>
+      <input type="checkbox" name="masters" id="masters" />
+
+      <p>Gender</p>
+      <label for="male">Male</label>
+      <input type="radio" name="gender" id="male">
+
+      <label for="female">Female</label>
+      <input type="radio" name="gender" id="female">
+        <br>
+        <br>
+      <input type="submit" value="Submit">
+    </form>
+</body>
+    <script type="text/javascript">
+
+        function validateUsername(username){
+            if(username.length >= 4) return "";
+            else{
+                return "Username should be at least 4 characters long";
+            }
+        }
+        function validatePassword(password){
+
+            var pattern=/^[0-9].*\$$/;
+            if(!password.match(pattern)){
+                return "First digit of password should be a number and last digit should be a $ sign.";
+            }
+            else{
+                return "";
+            }
+        }
+
+        function validateEducation(form){
+            var school = form.school.checked;
+            var bachelor = form.bachelor.checked;
+            var masters = form.masters.checked;
+
+            if(school || bachelor || masters){
+    
+                return "";
+            }
+            else{
+                return "Please select at least one education level.";
+            }
+        }
+        function validateRadio(gender){
+            if(gender.value) return "";
+            else return "Choose at least one gender";
+        }
+        function validateForm(form){
+                fail=validateUsername(form.username.value);
+                fail+=validatePassword(form.password.value);
+                fail+=validateEducation(form);
+                fail+=validateRadio(form.gender);
+                console.log(fail);
+                if(fail==""){
+                    return false;
+                }
+                else{
+                    alert(fail);
+                    return false;
+                     }
+                    }
+
+    </script>
+
+</html>
