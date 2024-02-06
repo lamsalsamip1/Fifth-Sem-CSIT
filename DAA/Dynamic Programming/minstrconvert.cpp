@@ -1,47 +1,36 @@
-// C++ implementation of the approach
 #include <bits/stdc++.h>
 using namespace std;
 
-// Function to return the minimum
-// cost to convert str1 to sr2
-int minCost(string str1, string str2, int n)
+int minCost(string str1, string str2, int m, int n)
 {
-    int cost = 0;
+    int dp[m + 1][n + 1];
 
-    // For every character of str1
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i <= m; i++)
     {
-
-        // If current character is not
-        // equal in both the strings
-        if (str1[i] != str2[i])
+        for (int j = 0; j <= n; j++)
         {
+            if (i == 0)
+                dp[i][j] = j;
 
-            // If the next character is also different in both
-            // the strings then these characters can be swapped
-            if (i < n - 1 && str1[i + 1] != str2[i + 1])
-            {
-                swap(str1[i], str1[i + 1]);
-                cost++;
-            }
+            else if (j == 0)
+                dp[i][j] = i;
 
-            // Change the current character
+            else if (str1[i - 1] == str2[j - 1])
+                dp[i][j] = dp[i - 1][j - 1];
+
             else
-            {
-                cost++;
-            }
+                dp[i][j] = 1 + min(dp[i][j - 1], min(dp[i - 1][j], dp[i - 1][j - 1]));
         }
     }
-    return cost;
+
+    return dp[m][n];
 }
 
-// Driver code
 int main()
 {
-    string str1 = "abb", str2 = "bba";
-    int n = str1.length();
-
-    cout << "Min number of operations is :" << minCost(str1, str2, n);
+    string str1 = "abb";
+    string str2 = "bba";
+    cout << "Min operations required:" << minCost(str1, str2, str1.length(), str2.length());
 
     return 0;
 }

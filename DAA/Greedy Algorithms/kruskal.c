@@ -1,31 +1,24 @@
 // Kruskal's algorithm in C
 
 #include <stdio.h>
-
 #define MAX 30
-
 typedef struct edge
 {
     int u, v, w;
 } edge;
-
 typedef struct edge_list
 {
     edge data[MAX];
     int n;
 } edge_list;
-
 edge_list elist;
-
 int Graph[MAX][MAX], n;
 edge_list spanlist;
-
 void kruskalAlgo();
 int find(int belongs[], int vertexno);
 void applyUnion(int belongs[], int c1, int c2);
 void sort();
 void print();
-
 // Applying Krushkal Algo
 void kruskalAlgo()
 {
@@ -43,14 +36,11 @@ void kruskalAlgo()
                 elist.n++;
             }
         }
-
     sort();
-
     for (i = 0; i < n; i++)
         belongs[i] = i;
 
     spanlist.n = 0;
-
     for (i = 0; i < elist.n; i++)
     {
         cno1 = find(belongs, elist.data[i].u);
@@ -64,12 +54,10 @@ void kruskalAlgo()
         }
     }
 }
-
 int find(int belongs[], int vertexno)
 {
     return (belongs[vertexno]);
 }
-
 void applyUnion(int belongs[], int c1, int c2)
 {
     int i;
